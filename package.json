@@ -11,6 +11,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@testing-library/react": "^16.0.0",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
