@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# Movie Apps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can try demo for this application with open [Moviect](https://moviect.vercel.app/)
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React.js](https://nextjs.org/) - The library for web and native user interfaces.
+- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types.
+- [Vitest](https://vitest.dev/) - Vitest Next Generation Testing Framework.
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework.
 
-## Expanding the ESLint configuration
+## Local development setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Add token credential on .env file in your local mechine
 
-- Configure the top-level `parserOptions` property like this:
+Node.js `>= 18.17` is required and setup with [pnpm](https://pnpm.io/) is recommended.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```sh
+
+# install dependencies
+pnpm i
+
+# serve with hot reload at localhost:5173
+pnpm dev
+
+# run testing
+pnpm test
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
