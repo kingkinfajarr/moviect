@@ -3,9 +3,7 @@ import { endpoint } from './endpoint';
 import { Movie } from '../types/movie.type';
 import { MovieDetail } from '../types/movie-detail.type';
 
-// const token = process.env.REACT_APP_API_KEY;
-const token =
-  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOWM1YzkyYzQzNDEwNDYwOTc4MjJmZjYyZWE2ZTgzZCIsIm5iZiI6MTcyMTIzMjgwMC4wNTc1NTQsInN1YiI6IjY2OTdlY2M0NzU2NjRhY2RlMDhhMDdjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9Zzc5APxRcEnX2HxqegKsE0jQSauZJP7NnLFLdWKIvs';
+const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
 
 axios.defaults.baseURL = endpoint.baseURL;
 
@@ -52,8 +50,6 @@ const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 const request = {
   get: <T>(url: string, params?: object) =>
     axios.get<T>(url, { params }).then(responseBody),
-  // post: <T>(url: string, body: {}) =>
-  //   axios.post<T>(url, body).then(responseBody),
 };
 
 const moviesNowPlaying = {
@@ -70,7 +66,7 @@ const moviesTopRated = {
 };
 
 const moviesDetail = {
-  list: (id: number) => request.get<MovieDetail>(endpoint.movie + `/${id}`),
+  list: (id: number) => request.get<MovieDetail>(`${endpoint.movie}/${id}`),
 };
 
 const api = {
