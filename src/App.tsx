@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import React from 'react';
-import { DetailPage } from './pages/DetailPage';
 import { PageContainer } from './components/layout/PageContainer';
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
-// const DetailPage = React.lazy(() => import('./pages/DetailPage'));
+const DetailPage = React.lazy(() => import('./pages/DetailPage'));
 const NowPlayingPage = React.lazy(() => import('./pages/NowPlayingPage'));
 const PopularPage = React.lazy(() => import('./pages/PopularPage'));
 const TopRatedPage = React.lazy(() => import('./pages/TopRatedPage'));
@@ -21,7 +20,6 @@ function App() {
             <Route path="/movies/now-playing" Component={NowPlayingPage} />
             <Route path="/movies/popular" Component={PopularPage} />
             <Route path="/movies/top-rated" Component={TopRatedPage} />
-            {/* <Route path="/search" Component={SearchPage} /> */}
           </Routes>
         </React.Suspense>
       </Router>

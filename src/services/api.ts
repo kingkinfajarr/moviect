@@ -25,7 +25,7 @@ axios.interceptors.response.use(
           break;
 
         case 401:
-          console.error('unauthorised');
+          console.error('unauthorized');
           break;
 
         case 404:
